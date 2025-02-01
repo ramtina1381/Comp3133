@@ -1,0 +1,31 @@
+{
+  "name": "Lab03_resturant_database",
+  "version": "1.0.0",
+  "description": "Advanced MongoDB, Mongoose, and Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sunkkadithee/Lab03_101445976_MongoDB-Mongoose.git"
+  },
+  "keywords": [
+    "mongoose",
+    "mongodb",
+    "express",
+    "REST",
+    "API"
+  ],
+  "author": "Pornpajee Sunkkadithee",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongodb": "^6.12.0",
+    "mongoose": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
