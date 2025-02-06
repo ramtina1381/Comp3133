@@ -1,0 +1,44 @@
+.users-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.loading,
+.error,
+.no-users {
+  font-size: 18px;
+  color: #ff4d4d;
+  margin-top: 10px;
+}
+
+.users-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user-item {
+  margin-bottom: 10px;
+}
+
+.user-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.user-button:hover {
+  background-color: #45a049;
+}
