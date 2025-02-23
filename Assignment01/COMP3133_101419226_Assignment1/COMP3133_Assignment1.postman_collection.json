@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "8f7636bb-a068-4eb2-85cb-3c9349468305",
+		"name": "COMP3133_Assignment1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38175949"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n  signup(username: \"user\", email: \"user@example.com\", password: \"password\") {\n    username\n    email\n    created_at\n  }\n}\n",
+						"variables": "\n{\n  \"query\": \"mutation { signup(username: \\\"john_doe\\\", email: \\\"john.doe@example.com\\\", password: \\\"password123\\\") { username email } }\"\n}\n"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n  login(username: \"Pang\", password: \"password\") {\n    token\n    user {\n      username\n      email\n    }\n  }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees Query",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query GetAllEmployees {\n  getAllEmployees {\n    id\n    first_name\n    last_name\n    email\n    designation\n    department\n  }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " Add New Employee Mutation",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation AddNewEmployee($first_name: String!, $last_name: String!, $email: String!, $gender: String!, $designation: String!, $salary: Float!, $date_of_joining: String!, $department: String!, $employee_photo: String!) {\n  addNewEmployee(first_name: $first_name, last_name: $last_name, email: $email, gender: $gender, designation: $designation, salary: $salary, date_of_joining: $date_of_joining, department: $department, employee_photo: $employee_photo) {\n    id\n    first_name\n    last_name\n    email\n    designation\n    department\n  }\n}\n",
+						"variables": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"gender\": \"Male\",\n  \"designation\": \"Software Engineer\",\n  \"salary\": 50000,\n  \"date_of_joining\": \"2024-02-13\",\n  \"department\": \"Engineering\",\n  \"employee_photo\": \"john_doe.jpg\"\n}\n"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation UpdateEmployee($updateEmployeeId: ID!, $firstName: String, $lastName: String, $email: String, $gender: String, $designation: String, $salary: Float, $dateOfJoining: String, $department: String, $employeePhoto: String) {\n  updateEmployee(id: $updateEmployeeId, first_name: $firstName, last_name: $lastName, email: $email, gender: $gender, designation: $designation, salary: $salary, date_of_joining: $dateOfJoining, department: $department, employee_photo: $employeePhoto) {\n    updated_at\n    salary\n    last_name\n    id\n    gender\n    employee_photo\n    first_name\n    email\n    designation\n    department\n    date_of_joining\n    created_at\n  }\n}\n",
+						"variables": "{\n  \"updateEmployeeId\": \"67ae58d679d1486d08b8db19\",\n  \"firstName\": \"Pang\",\n  \"lastName\": \"Sunkkadithee\",\n  \"email\": \"pang.new@example.com\",\n  \"gender\": \"Female\",\n  \"designation\": \"Senior Software Engineer\",\n  \"salary\": 80000,\n  \"dateOfJoining\": \"2024-02-13\",\n  \"department\": \"Engineering\",\n  \"employeePhoto\": \"https://example.com/new-photo.jpg\"\n}\n"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search employee by ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query SearchEmployeeById($searchEmployeeByIdId: ID!) {\n  searchEmployeeById(id: $searchEmployeeByIdId) {\n    id\n    first_name\n    last_name\n    email\n    gender\n    designation\n    salary\n    date_of_joining\n    department\n    employee_photo\n    created_at\n    updated_at\n  }\n}",
+						"variables": "{\n  \"searchEmployeeByIdId\": \"67ae58d679d1486d08b8db19\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation Mutation($deleteEmployeeId: ID!) {\n  deleteEmployee(id: $deleteEmployeeId)\n}",
+						"variables": "{\n  \"deleteEmployeeId\": \"67ae5c1a79d1486d08b8db23\"\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Employee by designation or department",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query SearchEmployeeByDesignationOrDept($designation: String, $department: String) {\n  searchEmployeeByDesignationOrDept(designation: $designation, department: $department) {\n    id\n    first_name\n    last_name\n    email\n    gender\n    designation\n    salary\n    date_of_joining\n    department\n    employee_photo\n    created_at\n    updated_at\n  }\n}",
+						"variables": "{\n  \"designation\": \"Business\",\n  \"department\": \"management\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
