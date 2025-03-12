@@ -1,0 +1,14 @@
+<h1>Hello, {{title}}</h1>
+<h2>{{college}}</h2>
+
+<button on-click="buttonClick()">Click</button>
+<button (click)="buttonClick()">Click</button>
+
+
+<img src={{person_image}} alt="person-image"> <br/>
+<img bind-src=person_image alt="person-image"> <br/>
+
+<app-student [student]="stud"></app-student>
+
+<h1>Pipe Examples</h1>
+<p>{{"hello" | date:''}}</p>
