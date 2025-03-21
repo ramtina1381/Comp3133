@@ -1,0 +1,9 @@
+<h1>signup form!</h1>
+<form #signUpForm="ngForm" (ngSubmit)="buttonSignupClick()">
+  <input type="text" [(ngModel)]="user.firstname" name="fname" placeholder="Enter firstname" />
+  <input type="text" [(ngModel)]="user.lastname" [ngModelOptions]="{standalone:true}" placeholder="Enter lastname" />
+  <input type="text" [(ngModel)]="user.city" [ngModelOptions]="{standalone:true}" placeholder="Enter city" />
+  <button type="submit">Sign up</button>
+</form>
+<p>{{user | json}}</p>
+<p>{{signUpForm.value | json}}</p>
